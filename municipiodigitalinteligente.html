@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Municipio Digital Inteligente - Documento</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+        .page {
+            width: 210mm; /* Tamaño A4 */
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .page h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            color: #1A2A44;
+            margin-bottom: 10px;
+        }
+        .page h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            color: #00AEEF;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .page p, .page li {
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        .page ul {
+            padding-left: 5px;
+            list-style-position: inside;
+        }
+        .page li {
+            margin-bottom: 5px;
+            text-indent: -20px;
+            padding-left: 20px;
+        }
+        .page .content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .page .text {
+            width: 60%;
+        }
+        .page .image {
+            width: 35%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+        }
+        .page .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .logo {
+            position: absolute;
+            top: 10mm;
+            right: 10mm;
+            width: 50px;
+            height: 50px;
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .cover, .call-to-action {
+            background: url('https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .cover::before, .call-to-action::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 42, 68, 0.7);
+        }
+        .cover h1, .call-to-action h1, .cover p, .call-to-action p, .cover .contact, .call-to-action .contact {
+            position: relative;
+            z-index: 1;
+        }
+        .cover h1, .call-to-action h1 {
+            color: white;
+        }
+        .cover p, .call-to-action p {
+            color: white;
+        }
+        .cover .subtitle {
+            font-size: 20px;
+            color: #00AEEF;
+            margin-bottom: 20px;
+        }
+        .cover .contact, .call-to-action .contact {
+            font-size: 12px;
+            margin-top: 20px;
+        }
+        .cover .contact a, .call-to-action .contact a {
+            color: #00AEEF;
+            text-decoration: none;
+        }
+        .icon-placeholder {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .icon-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .qr-container {
+            background-color: white;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .qr-code img {
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+            .cover, .call-to-action {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .qr-container {
+                background-color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Portada -->
+    <div class="page cover">
+        <h1>Portal Municipio Digital Inteligente</h1>
+        <p class="subtitle">Transformando la Gestión Municipal</p>
+        <p>Una solución personalizada por Gobierno Digital e Innovación (GDI)</p>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="Logo GDI">
+        </div>
+        <div class="contact">
+            <p>Conoce más en: <a href="https://municipiodigitalinteligente.powerappsportals.com/">municipiodigitalinteligente.powerappsportals.com</a></p>
+            <p>Contacto: Juan Heriberto Rosas | juanheriberto.rosas@gobiernodigitaleinnovacion.com | 5510806597</p>
+            <p>Sobre nosotros: <a href="https://www.gobiernodigitaleinnovacion.com/">gobiernodigitaleinnovacion.com</a></p>
+        </div>
+    </div>
+
+    <!-- Introducción -->
+    <div class="page">
+        <h1>¿Qué es el Portal Municipio Digital Inteligente?</h1>
+        <div class="content">
+            <div class="text">
+                <p>El Portal Municipio Digital Inteligente, desarrollado por Gobierno Digital e Innovación (GDI), es una plataforma integral que moderniza la gestión municipal y mejora la interacción con los ciudadanos. Desde datos oficiales y análisis inteligentes hasta trámites en línea y asistentes virtuales, nuestro portal ofrece herramientas digitales que promueven la transparencia, la eficiencia y la participación ciudadana.</p>
+                <h2>Beneficios Principales</h2>
+                <ul>
+                    <li>Digitalización de procesos municipales.</li>
+                    <li>Acceso a información oficial y análisis detallados.</li>
+                    <li>Gestión simplificada de trámites y servicios.</li>
+                    <li>Comunicación directa y transparente con los ciudadanos.</li>
+                </ul>
+                <p>Descubre cómo podemos transformar tu municipio con una solución personalizada y adaptada a tus necesidades.</p>
+            </div>
+            <div class="image">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/portada.png" alt="Ciudad Inteligente">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="Logo GDI">
+        </div>
+    </div>
+
+    <!-- Estudio -->
+    <div class="page">
+        <h1>Estudio: Datos Oficiales al Alcance de los Ciudadanos</h1>
+        <div class="content">
+            <div class="text">
+                <p>En la sección "Estudio" del Portal Municipio Digital Inteligente, los ciudadanos acceden a información actualizada y oficial de fuentes como INEGI, CONEVAL y Hacienda, organizada en cinco temas clave: Pobreza, Demografía, Rezago Social, Finanzas y FAIS. Cada tema cuenta con herramientas interactivas y análisis detallados para empoderar a los ciudadanos y apoyar la toma de decisiones del municipio.</p>
+                <h2>Características Clave</h2>
+                <ul>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Análisis de Datos"></span><strong>Dashboards Interactivos:</strong> Visualiza datos en gráficas y tablas dinámicas sobre más de 400 indicadores, como población, pobreza, finanzas y viviendas habitables. <em>Beneficio:</em> Información clara y accesible para todos.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Análisis de Datos"></span><strong>Análisis en PDF:</strong> Reportes descargables con análisis de tendencias, evolución, explicaciones y recomendaciones prácticas para cada indicador. <em>Beneficio:</em> Insights accionables para el municipio.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Análisis de Datos"></span><strong>Gobi Asistente Inteligente:</strong> Un asistente con tarjetas adaptativas que responde preguntas específicas, como "¿Cuál es el nivel de pobreza en 2024?" o "¿Cómo están las finanzas del municipio?". <em>Beneficio:</em> Respuestas rápidas y navegación intuitiva.</li>
+                </ul>
+                <h2>Ejemplo Práctico</h2>
+                <p>Imagina que un ciudadano quiere saber cuántas viviendas habitables hay en el municipio o cómo ha evolucionado el FAIS en 2024. Con el Gobi Asistente, puede obtener respuestas inmediatas, explorar dashboards interactivos y descargar un análisis detallado en PDF.</p>
+                <h2>Personalización</h2>
+                <p>Adaptamos los indicadores y temas a las prioridades de tu municipio, asegurando que la información sea relevante y útil para tus ciudadanos.</p>
+            </div>
+            <div class="image">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/dashboards.jpg" alt="Mockup de Dashboard">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="Logo GDI">
+        </div>
+    </div>
+
+    <!-- Trámites y Servicios -->
+    <div class="page">
+        <h1>Trámites y Servicios: Gestión Digital Simplificada para Ciudadanos</h1>
+        <div class="content">
+            <div class="text">
+                <p>La sección "Trámites y Servicios" permite a los ciudadanos realizar solicitudes, consultar su estatus y efectuar pagos en línea de forma rápida y segura. Con un proceso guiado, notificaciones automáticas y encuestas de satisfacción, el portal optimiza la interacción entre el municipio y los ciudadanos, mejorando la eficiencia y la transparencia.</p>
+                <h2>Características Clave</h2>
+                <ul>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Formulario"></span><strong>Nueva Solicitud en 4 Etapas:</strong> Un formulario intuitivo para seleccionar trámites, ingresar datos, describir la solicitud, indicar la ubicación en un mapa y adjuntar hasta 5 documentos (PDF o fotos). <em>Beneficio:</em> Proceso claro y accesible para todos los ciudadanos.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Formulario"></span><strong>Consulta de Estatus:</strong> Los ciudadanos pueden buscar su solicitud por ID y conocer su estado en tiempo real, con notificaciones automáticas por correo (folio inicial, actualizaciones, cancelaciones o resolución). <em>Beneficio:</em> Transparencia y seguimiento sin complicaciones.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Formulario"></span><strong>Pago en Línea con Stripe:</strong> Links integrados para pagar trámites seleccionados por el municipio, con recibo digital que se anexa al formulario. <em>Beneficio:</em> Pagos seguros y centralizados, sin filas ni demoras.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Formulario"></span><strong>Encuesta de Satisfacción:</strong> Al finalizar el trámite, los ciudadanos reciben un PDF con la resolución y un enlace para evaluar la calidad del servicio del municipio. <em>Beneficio:</em> Retroalimentación para mejorar continuamente.</li>
+                </ul>
+                <h2>Ejemplo Práctico</h2>
+                <p>Un ciudadano necesita solicitar un permiso de construcción. Selecciona el trámite, revisa los requisitos, paga en línea con Stripe, llena el formulario con su ubicación y documentos, y recibe un folio por correo. Más tarde, consulta el estatus y, al resolverse, evalúa el servicio mediante una encuesta.</p>
+                <h2>Personalización</h2>
+                <p>Configuramos los trámites, servicios y opciones de pago según las necesidades del municipio, integrando los procesos específicos que ya manejan.</p>
+            </div>
+            <div class="image">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/pago%20enlinea.jpg" alt="Mockup de Formulario">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="Logo GDI">
+        </div>
+    </div>
+
+    <!-- Gestión de Trámites y Servicios -->
+    <div class="page">
+        <h1>Gestión de Trámites y Servicios: Administración Eficiente para Servidores Públicos</h1>
+        <div class="content">
+            <div class="text">
+                <p>La sección "Gestión de Trámites y Servicios" permite a los servidores públicos autenticados registrar y administrar trámites y servicios municipales de manera digital. Con formularios intuitivos y guías claras, esta herramienta facilita la creación de procesos en línea y la publicación de documentos descargables, optimizando la gestión interna y mejorando el servicio a los ciudadanos.</p>
+                <h2>Características Clave</h2>
+                <ul>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Engranaje"></span><strong>Registro de Trámites y Servicios:</strong> Los servidores públicos pueden crear nuevos trámites o servicios mediante un formulario donde especifican nombre, clave única (Clave_CNARTYS), dependencia, descripción, requisitos (máximo 5 documentos), pasos, costos, tiempos y fundamentos legales. <em>Beneficio:</em> Estandarización y digitalización de procesos municipales.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Engranaje"></span><strong>Carga de Documentos Descargables:</strong> Permite asociar hasta 5 documentos en PDF (guías, formatos, manuales) a cada trámite, asegurando que los ciudadanos tengan acceso a la información necesaria para sus solicitudes. <em>Beneficio:</em> Mayor accesibilidad y claridad para los ciudadanos.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Engranaje"></span><strong>Autenticación Segura:</strong> Solo los servidores públicos autenticados pueden acceder a esta sección, garantizando la seguridad y control de los datos. <em>Beneficio:</em> Gestión confiable y protegida.</li>
+                </ul>
+                <h2>Ejemplo Práctico</h2>
+                <p>Un servidor público de la Dirección de Servicios Urbanos registra un nuevo trámite, "Reporte de Baches", ingresando los requisitos (identificación, comprobante de domicilio, foto del bache) y los pasos para el ciudadano. Luego, carga una "Guía Rápida para Reporte de Baches" en PDF, que los ciudadanos pueden descargar desde el portal.</p>
+                <h2>Personalización</h2>
+                <p>Adaptamos la plataforma para que los formularios reflejen las necesidades específicas del municipio, integrando las dependencias y tipos de trámites que ya manejan.</p>
+            </div>
+            <div class="image">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/autentificacion.jpg" alt="Mockup de Formulario de Registro">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="Logo GDI">
+        </div>
+    </div>
+
+    <!-- Seguimiento y Atención a Trámites y Servicios -->
+    <div class="page">
+        <h1>Seguimiento y Atención a Trámites y Servicios: Gestión Eficiente de Solicitudes</h1>
+        <div class="content">
+            <div class="text">
+                <p>La sección "Seguimiento y Atención a Trámites y Servicios" permite a los servidores públicos autenticados revisar, editar y resolver solicitudes ciudadanas de manera organizada. Con herramientas de seguimiento y reportes en tiempo real mediante Power BI, el municipio puede monitorear el estatus, ubicación y volumen de solicitudes, asegurando una atención rápida y transparente para los ciudadanos.</p>
+                <h2>Características Clave</h2>
+                <ul>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Seguimiento"></span><strong>Seguimiento y Resolución de Solicitudes:</strong> Los servidores públicos consultan solicitudes por folio, revisan la información del ciudadano (solo lectura), verifican requisitos y pasos, y actualizan el estatus ("Atendida" o "Cancelada") con campos editables como prioridad, servidor asignado y respuesta en PDF. <em>Beneficio:</em> Gestión ágil y transparente de solicitudes.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Seguimiento"></span><strong>Notificaciones Automáticas al Ciudadano:</strong> El sistema envía correos automáticos al ciudadano con el estatus de su solicitud: un PDF con la resolución si es atendida (junto con una encuesta de satisfacción), o una explicación si es cancelada. <em>Beneficio:</em> Comunicación clara y mejora continua mediante retroalimentación.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Seguimiento"></span><strong>Reportes en Power BI:</strong> Una subpágina con dashboards interactivos que muestran tablas, gráficas y mapas con el volumen, estatus y ubicación de las solicitudes en tiempo real. <em>Beneficio:</em> Toma de decisiones basada en datos para el municipio.</li>
+                </ul>
+                <h2>Ejemplo Práctico</h2>
+                <p>Un servidor público accede al portal, localiza una solicitud de "Reporte de Baches" por su folio, verifica los documentos adjuntos y la marca como "Atendida", adjuntando un PDF con la resolución. El ciudadano recibe un correo con el resultado y un enlace para evaluar el servicio. El municipio revisa en Power BI que el 80% de las solicitudes de baches se concentran en una zona específica, priorizando acciones.</p>
+                <h2>Personalización</h2>
+                <p>Configuramos los dashboards de Power BI y los campos editables según las prioridades y estructura del municipio, asegurando una gestión adaptada a sus necesidades.</p>
+            </div>
+            <div class="image">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/correoaviso.jpg" alt="Mockup de Dashboard Power BI">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="Logo GDI">
+        </div>
+    </div>
+
+    <!-- Asistente Virtual -->
+    <div class="page">
+        <h1>Asistente Virtual: Resuelve Dudas al Instante</h1>
+        <div class="content">
+            <div class="text">
+                <p>El Portal Municipio Digital Inteligente incluye un asistente virtual que guía a los ciudadanos en la gestión de trámites y servicios. Este bot responde preguntas sobre requisitos, costos, horarios y procesos, ofreciendo información clara y actualizada para facilitar el acceso a los servicios municipales.</p>
+                <h2>Características Clave</h2>
+                <ul>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Chat"></span><strong>Información en Tiempo Real:</strong> El asistente proporciona detalles actualizados sobre trámites y servicios, como costos, requisitos, pasos y horarios de atención. <em>Beneficio:</em> Respuestas rápidas y confiables para los ciudadanos.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Chat"></span><strong>Resolución de Dudas:</strong> Los ciudadanos pueden preguntar sobre cualquier trámite o servicio (por ejemplo, "¿Cuáles son los requisitos para un reporte de baches?" o "¿Cuánto cuesta una solicitud de poda?"), y el bot responde de forma precisa. <em>Beneficio:</em> Mejora la experiencia del usuario y reduce la carga administrativa.</li>
+                </ul>
+                <h2>Ejemplo Práctico</h2>
+                <p>Un ciudadano quiere saber los requisitos para solicitar un permiso de construcción. Pregunta al asistente virtual, "¿Qué necesito para un permiso de construcción?", y el bot responde: "Necesitas tu identificación oficial, comprobante de domicilio, planos del proyecto y el pago de $150. Puedes realizar el trámite en línea aquí: [enlace]."</p>
+                <h2>Personalización</h2>
+                <p>Configuramos el asistente virtual con la información específica del municipio, asegurando que las respuestas reflejen los trámites, costos y horarios locales.</p>
+            </div>
+            <div class="image">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/chatbotdudasdetramites%20y%20sevricios.jpg" alt="Mockup de Conversación con el Bot">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="Logo GDI">
+        </div>
+    </div>
+
+    <!-- Beneficios Económicos -->
+    <div class="page">
+        <h1>Beneficios Económicos: Ahorros y Eficiencia para el Municipio</h1>
+        <div class="content">
+            <div class="text">
+                <p>El Portal Municipio Digital Inteligente genera ahorros significativos para los municipios al digitalizar procesos, reducir costos administrativos y optimizar recursos. Además, mejora la experiencia ciudadana al eliminar trámites presenciales y agiliza la atención de problemas, con impactos positivos en lo económico, social y ambiental.</p>
+                <h2>Características Clave</h2>
+                <ul>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Ahorro"></span><strong>Reducción de Costos Administrativos:</strong> Automatiza procesos, disminuyendo gastos en personal, materiales (papel, impresiones) y gestión administrativa al eliminar trámites presenciales. <em>Beneficio:</em> Ahorros en tiempo y recursos para el municipio.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Ahorro"></span><strong>Aumento en la Recaudación de Pagos:</strong> La digitalización de pagos con Stripe permite a los ciudadanos pagar en línea, evitando filas y mejorando la tasa de cumplimiento. <em>Beneficio:</em> Incremento en los ingresos municipales.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Ahorro"></span><strong>Beneficios Sociales para los Ciudadanos:</strong> Los ciudadanos ahorran tiempo y dinero al realizar trámites desde su computadora o celular, adjuntando videos o fotos, sin necesidad de desplazarse ni presentar oficios físicos. <em>Beneficio:</em> Mayor accesibilidad y satisfacción ciudadana.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Ahorro"></span><strong>Impacto Ambiental y Eficiencia Operativa:</strong> Respuestas rápidas a problemas como fugas de agua permiten ahorrar recursos (por ejemplo, miles de litros de agua) y reducir el impacto ambiental. <em>Beneficio:</em> Gestión sostenible y responsable.</li>
+                </ul>
+                <h2>Ejemplo Práctico</h2>
+                <p>Un municipio que implementa el portal reduce sus gastos administrativos en un 30% al eliminar trámites presenciales, aumenta su recaudación en un 20% con pagos digitales y atiende una fuga de agua en 24 horas, salvando 10,000 litros de agua gracias a la rapidez del sistema.</p>
+                <h2>Personalización</h2>
+                <p>Analizamos las necesidades de tu municipio para maximizar los ahorros y la eficiencia, adaptando el portal a tus procesos y prioridades.</p>
+            </div>
+            <div class="image">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/graficabeneficios.jpg" alt="Gráfico de Ahorros">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="Logo GDI">
+        </div>
+    </div>
+
+    <!-- Beneficios Generales -->
+    <div class="page">
+        <h1>Por Qué Elegir Nuestro Portal Municipio Digital Inteligente</h1>
+        <div class="content">
+            <div class="text">
+                <p>Implementar el Portal Municipio Digital Inteligente trae beneficios inmediatos para tu municipio, optimizando la gestión y mejorando la calidad de vida de los ciudadanos.</p>
+                <h2>Ventajas Clave</h2>
+                <ul>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Modernización"></span><strong>Modernización:</strong> Digitaliza procesos y elimina trámites presenciales.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Transparencia"></span><strong>Transparencia:</strong> Ofrece datos oficiales y seguimiento en tiempo real.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Eficiencia"></span><strong>Eficiencia:</strong> Reduce tiempos y costos operativos con herramientas automatizadas.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Participación"></span><strong>Participación Ciudadana:</strong> Mejora la interacción con los ciudadanos mediante asistentes virtuales y encuestas de satisfacción.</li>
+                    <li><span class="icon-placeholder"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Ícono de Toma de Decisiones"></span><strong>Toma de Decisiones:</strong> Dashboards en Power BI para decisiones basadas en datos.</li>
+                </ul>
+                <h2>Ejemplo de Impacto</h2>
+                <p>Un municipio que implementó nuestro portal redujo los tiempos de atención de trámites en un 40% y aumentó la satisfacción ciudadana en un 25%, gracias a la digitalización y la transparencia.</p>
+                <p>Confía en Gobierno Digital e Innovación (GDI) para llevar tu municipio al siguiente nivel.</p>
+            </div>
+            <div class="image">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/finaltramitesyservic.png" alt="Beneficios">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="Logo GDI">
+        </div>
+    </div>
+
+    <!-- Llamado a la Acción -->
+    <div class="page call-to-action">
+        <h1>¡Digitaliza tu Municipio Hoy!</h1>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/refs/heads/main/gdi.jpg" alt="Logo GDI">
+        </div>
+        <p>Transforma la gestión de tu municipio con el Portal Municipio Digital Inteligente. Agenda una demostración gratuita y descubre cómo personalizamos esta solución para tus necesidades.</p>
+        
+        <!-- Contenedor del QR con fondo blanco -->
+        <div class="qr-container">
+            <div class="qr-code">
+                <img src="https://raw.githubusercontent.com/gobiernodigitaleinnovacion/imagenes/main/qr%20de%20la%20pagina.png" alt="Código QR Municipio Digital Inteligente">
+            </div>
+        </div>
+        
+        <div class="contact">
+            <h2>Conoce Más</h2>
+            <p>Visita: <a href="https://municipiodigitalinteligente.powerappsportals.com/">municipiodigitalinteligente.powerappsportals.com</a></p>
+            <p>Contacto: Juan Heriberto Rosas | juanheriberto.rosas@gobiernodigitaleinnovacion.com | 5510806597</p>
+            <p>Sobre Nosotros: <a href="https://www.gobiernodigitaleinnovacion.com/">gobiernodigitaleinnovacion.com</a></p>
+        </div>
+        <p><strong>Lleva tu municipio al siguiente nivel con Gobierno Digital e Innovación (GDI).</strong></p>
+    </div>
+</body>
+</html>
